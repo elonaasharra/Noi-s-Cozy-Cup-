@@ -1,0 +1,156 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About | Noi’s Cozy Cup{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="bg-light py-5 text-center">
+  <div class="container">
+    <h1 class="display-5 fw-bold mb-3">About Noi’s Cozy Cup</h1>
+    <p class="lead text-muted">
+      A warm place where coffee, comfort, and community come together.
+    </p>
+  </div>
+</section>
+
+
+<!-- STORY -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5">
+
+      <div class="col-md-6">
+        <img src="{% static 'cafe/images/friendds.png' %}"
+             class="img-fluid rounded-4 shadow-sm"
+             alt="Cafe interior">
+      </div>
+
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Our Story</h2>
+        <p class="text-muted">
+          Noi’s Cozy Cup started with a simple idea: create a calm and welcoming
+          space where everyone feels at home. From carefully selected coffee beans
+          to homemade desserts, every detail is crafted with love.
+        </p>
+        <p class="text-muted">
+          Whether you come to study, meet friends, or just relax with a latte,
+          we want every visit to feel special and comforting.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- FEATURES -->
+<section class="bg-light py-5">
+  <div class="container">
+
+    <h2 class="text-center fw-bold mb-5">What Makes Us Special</h2>
+
+    <div class="row g-4 text-center">
+
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+          <h5 class="fw-semibold mb-2">Fresh Coffee</h5>
+          <p class="text-muted mb-0">
+            Premium beans brewed daily for rich flavor and perfect aroma.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+          <h5 class="fw-semibold mb-2">Homemade Desserts</h5>
+          <p class="text-muted mb-0">
+            Cakes and sweets baked every morning with natural ingredients.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+          <h5 class="fw-semibold mb-2">Cozy Atmosphere</h5>
+          <p class="text-muted mb-0">
+            A peaceful space designed for studying, relaxing, and connecting.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- IMAGE + TEXT SPLIT -->
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center g-5 flex-md-row-reverse">
+
+      <!-- FOTO -->
+      <div class="col-md-6">
+        <img src="{% static 'cafe/images/qualitycoffe.png' %}"
+             class="img-fluid rounded-4 shadow-sm"
+             alt="Coffee beans">
+      </div>
+
+      <!-- TEKST -->
+      <div class="col-md-6">
+        <h2 class="fw-bold mb-3">Quality First</h2>
+
+        <p class="text-muted">
+          At Noi’s Cozy Cup, quality is not just a promise — it’s our daily habit.
+          From the moment the beans arrive to the last sip in your cup,
+          every step is handled with care and attention to detail.
+        </p>
+
+        <p class="text-muted">
+          We work with trusted suppliers, select premium ingredients, and
+          prepare everything fresh to make sure each visit feels special,
+          comforting, and consistent.
+        </p>
+
+        <!-- lista -->
+        <ul class="list-unstyled mt-4 text-muted">
+          <li class="mb-2">• Carefully selected specialty coffee beans</li>
+          <li class="mb-2">• Fresh milk and natural ingredients</li>
+          <li class="mb-2">• Homemade desserts baked every day</li>
+          <li class="mb-2">• Friendly service with attention to every detail</li>
+        </ul>
+
+        <a href="{% url 'location' %}" class="btn btn-outline-dark mt-3">
+          Visit Us
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TESTIMONIAL -->
+<section class="bg-light py-5">
+  <div class="container text-center">
+    <blockquote class="fs-4 fst-italic text-muted">
+      “A peaceful corner in the city where time slows down and coffee tastes better.”
+    </blockquote>
+    <p class="fw-semibold mb-0">– Our Guests</p>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h3 class="fw-bold mb-3">Visit Us Today</h3>
+    <a href="{% url 'contact' %}" class="btn btn-dark px-4">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+{% endblock %}

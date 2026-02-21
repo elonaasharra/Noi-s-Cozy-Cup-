@@ -1,0 +1,304 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Careers | Noi’s Cozy Cup{% endblock %}
+
+{% block content %}
+
+<!-- HERO IMAGE -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <div class="row align-items-center g-5">
+
+      <!-- TEXT -->
+      <div class="col-lg-6">
+        <h1 class="fw-bold mb-3">Join Our Team</h1>
+
+        <p class="text-muted mb-4">
+          At Noi’s Cozy Cup, our team is the heart of everything we do.
+          We value kindness, teamwork, and a passion for creating warm
+          experiences for every guest who walks through our doors.
+        </p>
+
+        <a href="#apply" class="btn btn-dark px-4">Apply Now</a>
+      </div>
+
+      <!-- FOTO -->
+      <div class="col-lg-6 text-center">
+        <img src="{% static 'cafe/images/staff.png' %}"
+             alt="Our staff"
+             class="img-fluid rounded-4 shadow-lg">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TWO COLUMNS TEXT -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <div class="row g-5">
+
+      <!-- Left -->
+      <div class="col-12 col-lg-6">
+        <h2 class="careers-title mb-3">Be Part of Noi’s Cozy Cup</h2>
+        <div class="careers-line mb-4"></div>
+
+        <p class="text-muted">
+          Working at Noi’s Cozy Cup is more than just a job. It’s a chance to create genuine moments
+          with guests, learn new skills, and grow in a friendly environment.
+        </p>
+        <p class="text-muted">
+          You will be part of a team that cares about quality, kindness, and consistency.
+          From perfect espresso shots to warm customer service, every detail matters.
+        </p>
+
+        <ul class="list-unstyled text-muted mt-4">
+          <li class="mb-2">• Supportive team culture and training</li>
+          <li class="mb-2">• Flexible schedules (where possible)</li>
+          <li class="mb-2">• Opportunity to grow and take responsibility</li>
+          <li class="mb-2">• A calm, cozy workplace</li>
+        </ul>
+      </div>
+
+      <!-- Right -->
+      <div class="col-12 col-lg-6">
+        <h2 class="careers-title mb-3">Growth, Respect, and Inclusion</h2>
+        <div class="careers-line mb-4"></div>
+
+        <p class="text-muted">
+          We believe a great café is built by people who feel valued. We aim to create a respectful,
+          welcoming team where everyone can contribute and improve.
+        </p>
+        <p class="text-muted">
+          Whether you are experienced or just starting, we look for people who are responsible,
+          positive, and willing to learn. If you enjoy working with people and love a cozy atmosphere,
+          you will fit right in.
+        </p>
+
+        <div class="p-4 rounded-4 careers-note">
+          <h6 class="fw-semibold mb-2">What we look for</h6>
+          <p class="text-muted mb-0">
+            Friendly communication, attention to detail, teamwork, and a genuine passion for coffee
+            and hospitality.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA BUTTON -->
+    <div class="text-center mt-5">
+      <a href="#apply" class="btn btn-dark px-5 py-3 careers-btn">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN POSITIONS -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-4">Open Positions</h2>
+    <p class="text-center text-muted mb-5">
+      If one of these roles feels right, we would love to hear from you.
+    </p>
+
+    <div class="row g-4">
+
+      <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 rounded-4">
+          <div class="card-body p-4">
+            <h5 class="fw-semibold">Barista</h5>
+            <p class="text-muted mb-3">
+              Prepare coffee drinks, maintain quality standards, and create a great guest experience.
+            </p>
+            <ul class="text-muted small mb-0">
+              <li>Part-time / Full-time</li>
+              <li>Training provided</li>
+              <li>Customer-focused</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 rounded-4">
+          <div class="card-body p-4">
+            <h5 class="fw-semibold">Service Staff</h5>
+            <p class="text-muted mb-3">
+              Welcome guests, take orders, and ensure a clean and cozy environment.
+            </p>
+            <ul class="text-muted small mb-0">
+              <li>Flexible shifts</li>
+              <li>Teamwork required</li>
+              <li>Friendly communication</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <div class="card border-0 shadow-sm h-100 rounded-4">
+          <div class="card-body p-4">
+            <h5 class="fw-semibold">Kitchen Assistant</h5>
+            <p class="text-muted mb-3">
+              Help with dessert preparation, plating, and keeping the workspace organized.
+            </p>
+            <ul class="text-muted small mb-0">
+              <li>Attention to detail</li>
+              <li>Hygiene and standards</li>
+              <li>Calm under pressure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- APPLY FORM -->
+<section id="apply" class="py-5 bg-white">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-8">
+
+        <div class="p-4 p-md-5 shadow-sm rounded-4 bg-light">
+          <h2 class="fw-bold mb-3 text-center">Application</h2>
+          <p class="text-muted text-center mb-4">
+            Fill out the form and we will get back to you as soon as possible.
+          </p>
+
+          <form method="post" enctype="multipart/form-data" id="applyForm" novalidate>
+            {% csrf_token %}
+            <div id="applyErrorBox" class="alert alert-danger d-none" role="alert"></div>
+
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label">Full Name</label>
+                <input type="text" class="form-control" name="full_name" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" required>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Phone</label>
+                <input type="text" class="form-control" name="phone">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label">Position</label>
+                <select class="form-select" name="position" required>
+                  <option value="" selected disabled>Select a position</option>
+                  <option>Barista</option>
+                  <option>Service Staff</option>
+                  <option>Kitchen Assistant</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Short Message</label>
+                <textarea class="form-control" name="message" rows="4" placeholder="Tell us a bit about yourself..." required></textarea>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Upload CV (PDF)</label>
+                <input type="file" class="form-control" name="cv" accept=".pdf">
+                <div class="form-text">Optional. You can also apply without a CV.</div>
+              </div>
+            </div>
+
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-dark py-3">Submit Application</button>
+            </div>
+          </form>
+
+          <p class="text-muted small mt-3 mb-0 text-center">
+            By applying, you agree that we may contact you regarding your application.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .careers-hero{
+    background-size: cover;
+    background-position: center;
+    min-height: 340px;
+  }
+  .careers-hero-overlay{
+    background: rgba(0,0,0,0.35);
+    min-height: 340px;
+    display:flex;
+    align-items:flex-end;
+  }
+  .careers-hero-box{
+    background:#fff;
+    border-radius: 18px;
+    box-shadow: 0 18px 40px rgba(0,0,0,0.15);
+  }
+  .careers-title{
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+  .careers-line{
+    width: 120px;
+    height: 4px;
+    background: #c59d5f;
+  }
+  .careers-note{
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.06);
+  }
+  .careers-btn{
+    border-radius: 14px;
+  }
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("applyForm");
+  const errorBox = document.getElementById("applyErrorBox");
+
+  form.addEventListener("submit", function (e) {
+    const fullName = form.full_name.value.trim();
+    const email = form.email.value.trim();
+    const position = form.position.value;
+    const message = form.message.value.trim();
+    const cv = form.cv.files[0];
+
+    const nameRegex = /^[A-Za-z\s]+$/;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    let errorMsg = "";
+
+    if (!fullName || !email || !position || !message) {
+      errorMsg = "Please fill in all required fields.";
+    }
+    else if (!nameRegex.test(fullName)) {
+      errorMsg = "Full name must contain only letters and spaces.";
+    }
+    else if (!emailRegex.test(email)) {
+      errorMsg = "Please enter a valid email address.";
+    }
+    else if (cv && !cv.name.toLowerCase().endsWith(".pdf")) {
+      errorMsg = "CV must be a PDF file.";
+    }
+
+    if (errorMsg) {
+      e.preventDefault();
+      errorBox.textContent = errorMsg;
+      errorBox.classList.remove("d-none");
+      errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      errorBox.classList.add("d-none");
+    }
+  });
+});
+</script>
+
+{% endblock %}

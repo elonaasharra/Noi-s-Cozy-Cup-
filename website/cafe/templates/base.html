@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Noi's Cozy Cup{% endblock %}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'cafe/css/base.css' %}">
+<link rel="icon" type="image/png" href="{% static 'cafe/images/noiscozycup.png' %}">
+
+</head>
+<body style="background:#f7f7fb;">
+
+<!-- HEADER (light) -->
+<header class="shadow-sm bg-white">
+  <nav class="navbar navbar-expand-lg container">
+
+<a href="{% url 'home' %}" class="navbar-brand d-flex align-items-center gap-2">
+
+  <span class="brand-title">Noi’s Cozy Cup</span>
+
+</a>
+
+
+    <!-- ☰ hamburger button -->
+    <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- MENU -->
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'location' %}">Location</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'careers' %}">Careers</a>
+        </li>
+        <li class="nav-item">
+  <a class="nav-link" href="{% url 'coffee_list' %}">Menu</a>
+</li>
+
+
+
+
+
+      </ul>
+    </div>
+
+  </nav>
+</header>
+
+<!-- CONTENT -->
+<!-- CONTENT -->
+<main>
+  <div class="container mt-3">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+
+  {% block content %}{% endblock %}
+</main>
+
+
+<!-- FOOTER (light) -->
+
+<footer class="footer-hero mt-5 text-white">
+  <!-- overlay -->
+  <div class="footer-overlay py-5">
+    <div class="container">
+      <div class="row g-4">
+
+        <!-- Kolona 1 -->
+        <div class="col-12 col-md-4">
+          <ul class="list-unstyled footer-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+
+            <!-- opsionale: faqe të tjera -->
+            <li class="mt-2"><a href="{% url 'location' %}">Where can you find us?</a></li>
+            <li><a href="{% url 'careers' %}">Work with us !</a></li>
+          </ul>
+        </div>
+
+        <!-- Kolona 2 -->
+        <div class="col-12 col-md-4">
+          <h5 class="text-uppercase fw-bold mb-3">Contact us!</h5>
+
+          <ul class="list-unstyled footer-contact">
+            <li class="mb-2">
+              <span class="footer-label">Email:</span>
+              <a href="mailto:info@noiscozycup.al">info@noiscozycup.al</a>
+            </li>
+            <li class="mb-2">
+              <span class="footer-label">Tel:</span>
+              <a href="tel:+355680000000">+355 68 000 0000</a>
+            </li>
+            <li class="mb-2">
+              <span class="footer-label">Adress:</span>
+              <span>Kavaja Street, Tiranë</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kolona 3 -->
+       <div class="col-12 col-md-4">
+  <h5 class="text-uppercase fw-bold mb-3">Opening Hours</h5>
+  <p class="mb-2 fw-semibold">Monday – Sunday: 07:00 – 22:30</p>
+  <p class="mb-0 text-white-50 small">
+    Visit us anytime — we’ll be happy to welcome you with a warm cup of coffee.
+  </p>
+</div>
+
+
+      </div>
+
+      <hr class="footer-hr my-4">
+
+      <!-- Bottom bar -->
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <span class="small text-white-50">
+          © 2026 Noi’s Cozy Cup | All Rights Reserved
+        </span>
+
+       <div class="d-flex gap-3">
+
+  <a href="#" class="footer-social">
+    <img src="{% static 'cafe/images/insta.png' %}" alt="Instagram">
+  </a>
+
+  <a href="#" class="footer-social">
+    <img src="{% static 'cafe/images/facebook.png' %}" alt="Facebook">
+  </a>
+
+  <a href="#" class="footer-social">
+    <img src="{% static 'cafe/images/linkedin.png' %}" alt="LinkedIn">
+  </a>
+
+</div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

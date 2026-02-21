@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Specialty Coffee | My Cafe{% endblock %}
+
+{% block content %}
+
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+
+
+      <h1 class="display-4 fw-semibold fst-italic mb-3">
+        Our Coffee Menu
+      </h1>
+
+      <p class="text-muted fs-5">
+        Every cup tells a story of flavor and comfort.
+      </p>
+
+      <div class="d-flex justify-content-center mt-3">
+        <div class="border-top border-3 w-25"></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="py-5">
+  <div class="container">
+
+    <div class="row g-4">
+
+      {% for coffee in coffees %}
+      <!-- 4 në rresht në desktop, 2 në tablet, 1 në mobile -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+          {% if coffee.image %}
+            <img src="{{ coffee.image.url }}" class="card-img-top"
+                 style="height: 300px; width:100%; object-fit: cover;">
+          {% else %}
+            <img src="{% static 'cafe/images/freshbeans.png' %}" class="card-img-top"
+                 style="height: 300px; width:100%; object-fit: cover;">
+          {% endif %}
+
+          <div class="card-body p-3">
+            <h5 class="fw-bold mb-1">{{ coffee.name }}</h5>
+
+            <p class="text-muted small mb-2">
+              {{ coffee.description|truncatechars:90 }}
+            </p>
+
+            <div class="fw-semibold">{{ coffee.price }} ALL</div>
+          </div>
+
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="alert alert-warning">No coffees available right now.</div>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+<section class="py-5">
+  <div class="container">
+
+    <div class="text-center mb-4">
+      <h2 class="fw-semibold fst-italic mb-2">Desserts</h2>
+      <p class="text-muted">Sweet treats to pair with your coffee.</p>
+      <div class="d-flex justify-content-center mt-2">
+        <div class="border-top border-3 w-25"></div>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {% for item in desserts %}
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card border-0 shadow-sm h-100 rounded-4 overflow-hidden">
+
+          {% if item.image %}
+            <img src="{{ item.image.url }}" class="card-img-top"
+                 style="height: 300px; width:100%; object-fit: cover;">
+          {% else %}
+            <img src="{% static 'cafe/images/homemadedesserts.png' %}" class="card-img-top"
+                 style="height: 300px; width:100%; object-fit: cover;">
+          {% endif %}
+
+          <div class="card-body p-3">
+            <h5 class="fw-bold mb-1">{{ item.name }}</h5>
+            <p class="text-muted small mb-2">{{ item.description|truncatechars:90 }}</p>
+            <div class="fw-semibold">{{ item.price }} ALL</div>
+          </div>
+
+        </div>
+      </div>
+      {% empty %}
+      <div class="col-12">
+        <div class="alert alert-warning">No desserts available right now.</div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

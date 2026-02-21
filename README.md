@@ -17,6 +17,7 @@ Noi’s Cozy Cup is a dynamic café website developed using Python and Django as
 - Django
 - HTML5
 - CSS3
+- JS
 - SQLite
 
 ## Project Structure
